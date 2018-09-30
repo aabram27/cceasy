@@ -1,0 +1,60 @@
+body{
+    font-family: "Arial", sans-serif;
+}
+.blocks{
+    display: inline-block;
+}
+.block {
+    display: none; 
+}
+.block.active {
+    padding:10px 20px;
+    display: inline-block;
+    position: relative;
+}
+.tabs {
+    padding: 0px 20px;
+    display: flex; 
+    width: 100%;
+    border-bottom: 1px solid gray;
+
+}
+.tab {
+    cursor: pointer; 
+    margin-right: 10px;
+    padding:10px;
+    border-left: 1px solid gray;
+    border-top:1px solid gray;
+    border-right:1px solid gray;
+    border-top-right-radius: 10px;
+
+
+}
+.tab.active {
+    border-color: black;
+    border-width: 2px;
+    
+}
+.login{
+    position: absolute;
+    right:20px;
+    padding:10px;
+}
+.createButton{
+    position: absolute;
+    right:0;
+    top:40px;
+}
+table { 
+    border-collapse: collapse; 
+}
+table tr td{
+    padding:10px;
+    border-bottom:1px solid lightgray;
+}
+table tr td:nth-child(2){
+    text-align: right;
+}
+table.reports tr td:nth-child(4){
+    text-align: right;
+}

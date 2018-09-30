@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>CorpCards Easy</title>
+        <link type="text/css" rel="stylesheet" href="./index.css"/>
+    </head>
+    <body>
+        <div class="tabs">
+            <div class="tab active">Transactions</div>
+            <div class="tab">Reports</div>
+            <div class="login">first.last@company.com</div>
+        </div>
+              
+        <div class="blocks">
+            <div class="block active">
+                <h3>Card xxxx xxxx xxxx 1234</h3>
+                <input class="createButton" type="button" value="Create report"/>
+                <table>
+                    <thead>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Currency</th>
+                        <th>Location</th>
+                        <th>Select</th>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2018-09-30 12:39</th>
+                            <td>10 000.00</td>
+                            <td>RUB</td>
+                            <td>LLC Romashka Moscow</td>
+                            <td>
+                                <input type="checkbox"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2018-09-30 17:40</th>
+                            <td>150.00</td>
+                            <td>EUR</td>
+                            <td>CHENA TELECAM</td>
+                            <td>
+                                <input type="checkbox"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2018-08-23 16:13</th>
+                            <td>534.00</td>
+                            <td>RUB</td>
+                            <td>LLC Pyatorochka</td>
+                            <td>
+                                <input type="checkbox"/>
+                            </td>
+                            </tr>    
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="block">
+                    <h3>My reports</h3>
+                    <table class="reports">
+                        <thead>
+                            <th>Number</th>
+                            <th>Date</th>
+                            <th>Title</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>3</th>
+                                <td>2018-09-25</td>
+                                <td>Business trip France</td>
+                                <td>100 000.00</td>
+                                <td>On validation</td>
+                            </tr>
+                            <tr>
+                                <td>2</th>
+                                <td>2018-08-30</td>
+                                <td>Team building</td>
+                                <td>30 000.00</td>
+                                <td>Done</td>
+                            </tr>
+                            <tr>
+                                <td>1</th>
+                                <td>2018-07-04</td>
+                                <td>Team building</td>
+                                <td>25 700.00</td>
+                                <td>Done</td>    
+                        </tbody>
+                    </table>
+            </div>
+            <div class="block">Tab content 3</div>
+        </div>
+         
+    </body>
+</html>
+
+<script type="text/javascript">
+    (function() {
+        const $tabs = [].slice.call(document.querySelectorAll('.tab'));
+        const $blocks = [].slice.call(document.querySelectorAll('.block'));
+
+        const onClick = (index) => () => {
+          $blocks.forEach(($block, i) => {
+            if (index === i) {
+              $block.classList.add('active');
+            } else {
+              $block.classList.remove('active');
+            }
+          });
+
+          $tabs.forEach(($tab, i) => {
+            if (index === i) {
+              $tab.classList.add('active');
+            } else {
+              $tab.classList.remove('active');
+            }
+          });
+        };
+        $tabs.forEach(($tab, index) => {
+          $tab.onclick = onClick(index);
+        });
+      })();
+</script>
